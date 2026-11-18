@@ -1,0 +1,206 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated user wallet, daily offer quota, referral summary, and anti-fraud telemetry.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID of the user." },
+        "displayName": { "type": "string", "description": "Display name from Google account." },
+        "email": { "type": "string", "description": "Verified Google account email." },
+        "photoUrl": { "type": "string", "description": "Optional avatar URL." },
+        "pointsBalance": { "type": "integer", "description": "Current redeemable reward points balance." },
+        "lifetimePointsEarned": { "type": "integer", "description": "Total points earned across all sources." },
+        "lifetimePointsWithdrawn": { "type": "integer", "description": "Total points redeemed via payouts." },
+        "referralCode": { "type": "string", "description": "Unique immutable referral code for this user." },
+        "referredByCode": { "type": "string", "description": "Referral code claimed by this user, if any." },
+        "referredByUid": { "type": "string", "description": "UID of the inviter who referred this user, if any." },
+        "referralCount": { "type": "integer", "description": "Number of successful referrals." },
+        "referralBonusPoints": { "type": "integer", "description": "Total 500pt referral base bonuses earned." },
+        "referralCommissionPoints": { "type": "integer", "description": "Total 40% referral commission bonuses earned." },
+        "dailyOfferDate": { "type": "string", "description": "UTC/local date key YYYY-MM-DD for the daily offer cap." },
+        "dailyOfferCount": { "type": "integer", "description": "Number of offers completed on dailyOfferDate (max 30)." },
+        "dailyAdCount": { "type": "integer", "description": "Number of rewarded ads watched on dailyOfferDate." },
+        "megaOfferTickets": { "type": "integer", "description": "Tickets collected for Mega Offer (0..30)." },
+        "normalOffer1Tickets": { "type": "integer", "description": "Tickets collected for Normal Offer 1 (0..30)." },
+        "normalOffer2Tickets": { "type": "integer", "description": "Tickets collected for Normal Offer 2 (0..30)." },
+        "fraudRiskScore": { "type": "integer", "description": "Computed fraud risk score from 0 to 100." },
+        "accountStatus": { "type": "string", "enum": ["ACTIVE", "FLAGGED", "FROZEN"], "description": "Account integrity status." },
+        "deviceHash": { "type": "string", "description": "SHA-256 device fingerprint hash." },
+        "role": { "type": "string", "enum": ["USER", "ADMIN"], "description": "User role." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp on creation." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp on last update." }
+      },
+      "required": [
+        "userId", "displayName", "email", "pointsBalance", "lifetimePointsEarned",
+        "lifetimePointsWithdrawn", "referralCode", "referralCount", "referralBonusPoints",
+        "referralCommissionPoints", "dailyOfferDate", "dailyOfferCount", "dailyAdCount",
+        "fraudRiskScore", "accountStatus", "deviceHash", "role", "createdAt", "updatedAt"
+      ]
+    },
+    "EarningLog": {
+      "title": "EarningLog",
+      "description": "Immutable ledger of earned points with 70% audience / 30% platform revenue split.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "MEGA_OFFER", "NORMAL_OFFER", "REWARDED_AD",
+            "SURVEY_PUBSCALE", "SURVEY_GOODWALLS", "SURVEY_PARTNER",
+            "REFERRAL_BONUS", "REFERRAL_COMMISSION"
+          ]
+        },
+        "title": { "type": "string" },
+        "pointsAwarded": { "type": "integer" },
+        "grossValueInr": { "type": "number" },
+        "userShareInr": { "type": "number" },
+        "adminShareInr": { "type": "number" },
+        "fraudRiskScore": { "type": "integer" },
+        "verificationStatus": { "type": "string", "enum": ["VERIFIED", "FLAGGED"] },
+        "dateKey": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId", "userName", "sourceType", "title", "pointsAwarded",
+        "grossValueInr", "userShareInr", "adminShareInr", "fraudRiskScore",
+        "verificationStatus", "dateKey", "createdAt"
+      ]
+    },
+    "WithdrawalRequest": {
+      "title": "WithdrawalRequest",
+      "description": "Fast withdrawal request supporting UPI, Paytm, IMPS, Bank Transfer, and Google Play Redeem Codes.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "method": {
+          "type": "string",
+          "enum": ["UPI", "PAYTM", "IMPS", "BANK_TRANSFER", "GOOGLE_PLAY_REDEEM"]
+        },
+        "pointsRedeemed": { "type": "integer" },
+        "amountInr": { "type": "number" },
+        "destinationMasked": { "type": "string" },
+        "upiId": { "type": "string" },
+        "paytmNumber": { "type": "string" },
+        "bankAccountNumber": { "type": "string" },
+        "ifscCode": { "type": "string" },
+        "accountHolderName": { "type": "string" },
+        "redeemEmail": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "PROCESSING_IMPS", "COMPLETED", "REJECTED", "FLAGGED"]
+        },
+        "fastTrackEligible": { "type": "boolean" },
+        "fraudRiskScore": { "type": "integer" },
+        "utrOrRedeemCode": { "type": "string" },
+        "adminNote": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId", "userName", "userEmail", "method", "pointsRedeemed",
+        "amountInr", "destinationMasked", "status", "fastTrackEligible",
+        "fraudRiskScore", "createdAt", "updatedAt"
+      ]
+    },
+    "FraudEvent": {
+      "title": "FraudEvent",
+      "description": "Device integrity and anti-fraud telemetry event.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "eventType": { "type": "string" },
+        "severity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+        "riskPoints": { "type": "integer" },
+        "details": { "type": "string" },
+        "deviceHash": { "type": "string" },
+        "resolved": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId", "userName", "eventType", "severity",
+        "riskPoints", "details", "deviceHash", "resolved", "createdAt"
+      ]
+    },
+    "ReferralCode": {
+      "title": "ReferralCode",
+      "description": "Code-to-UID lookup record for invite validation without exposing user PII.",
+      "type": "object",
+      "properties": {
+        "ownerUid": { "type": "string" },
+        "referralCode": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerUid", "referralCode", "ownerName", "createdAt"]
+    },
+    "ReferralRecord": {
+      "title": "ReferralRecord",
+      "description": "Tracks 500pt invite bonus and 40% referral commission bonus per successful invite.",
+      "type": "object",
+      "properties": {
+        "inviterUid": { "type": "string" },
+        "inviteeUid": { "type": "string" },
+        "inviteeName": { "type": "string" },
+        "referralCode": { "type": "string" },
+        "baseBonusPoints": { "type": "integer" },
+        "commissionRatePercent": { "type": "integer" },
+        "commissionPoints": { "type": "integer" },
+        "claimedByInviter": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["PENDING_CLAIM", "CREDITED"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "inviterUid", "inviteeUid", "inviteeName", "referralCode",
+        "baseBonusPoints", "commissionRatePercent", "commissionPoints",
+        "claimedByInviter", "status", "createdAt", "updatedAt"
+      ]
+    },
+    "AdminMarker": {
+      "title": "AdminMarker",
+      "description": "Trusted admin role assignment document.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Per-user wallet, daily offer quota, referral stats, and anti-fraud status."
+    },
+    "/earning_logs/{logId}": {
+      "schema": { "$ref": "#/entities/EarningLog" },
+      "description": "Reward ledger entries with 70/30 revenue split tracking."
+    },
+    "/withdrawals/{withdrawalId}": {
+      "schema": { "$ref": "#/entities/WithdrawalRequest" },
+      "description": "UPI, Paytm, IMPS, Bank Transfer, and Google Play Redeem withdrawal requests."
+    },
+    "/fraud_events/{eventId}": {
+      "schema": { "$ref": "#/entities/FraudEvent" },
+      "description": "Anti-fraud integrity alerts and device security telemetry."
+    },
+    "/referral_codes/{code}": {
+      "schema": { "$ref": "#/entities/ReferralCode" },
+      "description": "Single-document lookup mapping referral code to owner UID."
+    },
+    "/referrals/{referralId}": {
+      "schema": { "$ref": "#/entities/ReferralRecord" },
+      "description": "Referral attribution and 500pt + 40% bonus ledger."
+    },
+    "/admins/{uid}": {
+      "schema": { "$ref": "#/entities/AdminMarker" },
+      "description": "Explicit admin UID allowlist."
+    }
+  }
+}

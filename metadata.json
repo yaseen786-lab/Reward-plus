@@ -1,0 +1,8 @@
+{
+  "name": "Remix RewardPulse",
+  "description": "Task, rewarded ad, and survey rewards app with UPI, IMPS, and Google Play redeem payouts, referral bonuses, anti-fraud telemetry, and an admin tracking dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

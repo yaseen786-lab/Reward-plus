@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RewardPulse</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="auth_subtitle">Watch rewarded ads, complete PubScale &amp; GoodWalls surveys, and withdraw via UPI, IMPS &amp; Google Play.</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_earn">Earn</string>
+    <string name="nav_surveys">Surveys</string>
+    <string name="nav_wallet">Wallet</string>
+    <string name="nav_refer">Refer</string>
+    <string name="nav_admin">Admin</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_frozen_account">Account frozen due to security policy violation. Contact support via Admin review.</string>
+</resources>

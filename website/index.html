@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RewardPulse — Play Quiz, Complete Surveys &amp; Withdraw via UPI &amp; IMPS</title>
+  <meta name="description" content="RewardPulse official website. Play Mega &amp; Normal quiz offers, complete PubScale &amp; GoodWalls surveys, earn 500 + 40% referral bonuses, and withdraw fast via UPI, Paytm, IMPS &amp; Google Play." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">RP</span>
+        <span>RewardPulse</span>
+      </a>
+      <nav id="navLinks" class="nav-links">
+        <a href="#offers">Quiz Offers</a>
+        <a href="#surveys">Surveys</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#payouts">Fast Payouts</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#payouts" class="btn btn-primary">Download on Play</a>
+        <button id="menuToggle" class="menu-btn" type="button" aria-label="Toggle Menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">70% Audience Payout • Anti-Fraud Protected</span>
+          <h1>Turn Daily Quizzes &amp; Surveys Into <span class="accent">Instant UPI &amp; IMPS</span> Rewards</h1>
+          <p class="hero-lead">
+            Play simple quiz mini-games with built-in rewarded ads, answer PubScale &amp; GoodWalls surveys,
+            invite friends for 500 pts + 40% commission, and redeem directly to UPI, Paytm, IMPS Bank, or Google Play.
+          </p>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Estimate Earnings</a>
+            <a href="#offers" class="btn btn-outline">Explore Mega &amp; Normal Offers</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-box">
+              <strong>1,500 pts</strong>
+              <span>Mega Quiz Offer</span>
+            </div>
+            <div class="stat-box">
+              <strong>800 pts</strong>
+              <span>Normal Quiz Offers</span>
+            </div>
+            <div class="stat-box">
+              <strong>500 + 40%</strong>
+              <span>Per Referral Bonus</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="phone-frame" aria-label="Interactive RewardPulse App Preview">
+          <div class="phone-header">
+            <strong>RewardPulse Live Preview</strong>
+            <span class="pill">Google Verified</span>
+          </div>
+          <div class="wallet-card">
+            <div style="font-size:0.82rem; color:#94a3b8;">Your Wallet Balance (70% Share)</div>
+            <div id="demoWalletPts" class="wallet-balance">12,450 pts</div>
+            <div style="font-size:0.86rem; color:#34d399; margin-top:4px;">100 pts = ₹1.00 INR • Instant IMPS Ready</div>
+          </div>
+          <div class="ticket-row">
+            <div class="ticket-head">
+              <span>Mega Quiz Progress</span>
+              <span id="demoTicketCount" style="color:#fbbf24;">18 / 30 Tickets</span>
+            </div>
+            <div class="progress-track">
+              <div id="demoTicketFill" class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div style="font-size:0.78rem; color:#94a3b8; margin-top:8px;">
+              1 Built-in Ad = 1 Ticket • Complete 30 Tickets for +1,500 pts
+            </div>
+          </div>
+          <button id="demoPlayTicketBtn" type="button" class="btn btn-primary" style="width:100%; margin-top:8px;">
+            +1 Ticket Demo (Play Quiz &amp; Ad)
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="offers" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="pill pill-gold">Daily Cap: 30 Offers / Day</span>
+          <h2>Simple Quiz Offers Built for Everyone</h2>
+          <p>Play quick quiz rounds with built-in sponsored ads. Every completed ad awards 1 Ticket — reach 30 Tickets to claim your offer reward.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card mega">
+            <span class="pill pill-gold">1 Mega Offer</span>
+            <h3>Mega Knowledge Quiz</h3>
+            <p>Fun trivia &amp; brain-teaser rounds with built-in ad rewards. Collect 30 Tickets to unlock the Mega payout.</p>
+            <div class="reward-pts">+1,500 pts</div>
+          </article>
+
+          <article class="card">
+            <span class="pill">Normal Offer #1</span>
+            <h3>Quick Daily Trivia</h3>
+            <p>Short everyday quiz rounds with seamless built-in ads. Earn 1 Ticket per ad and claim at 30 Tickets.</p>
+            <div class="reward-pts">+800 pts</div>
+          </article>
+
+          <article class="card">
+            <span class="pill">Normal Offer #2</span>
+            <h3>Fast Word &amp; Math Quiz</h3>
+            <p>Light number &amp; word puzzles for fast ticket collection. Up to 30 total offer completions per day.</p>
+            <div class="reward-pts">+800 pts</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="surveys" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="pill">Verified Survey Partners</span>
+          <h2>PubScale, GoodWalls &amp; Global Survey Walls</h2>
+          <p>Answer genuine consumer and product feedback surveys to boost your wallet balance every day.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>PubScale &amp; GoodWalls</h3>
+            <p>High-qualification mobile surveys covering shopping, gaming, finance, and digital lifestyle with instant credit logging.</p>
+          </div>
+          <div class="card">
+            <h3>CPX Research &amp; BitLabs</h3>
+            <p>Additional global partner feeds with transparent estimated times and 70% direct reward allocation to your wallet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section">
+      <div class="container">
+        <div class="calc-panel">
+          <div>
+            <span class="pill">Interactive Estimator</span>
+            <h2 style="margin-top:10px; font-size:1.75rem;">Calculate Your Potential Rewards</h2>
+            <p style="color:var(--muted); margin:6px 0 20px;">Adjust your daily quiz offers, partner surveys, and monthly friend invites (70% user payout model).</p>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>Mega Quiz Offers (1,500 pts)</span>
+                <span id="valMegaOffers" style="color:var(--gold-bright);">2 / day</span>
+              </div>
+              <input id="calcMegaOffers" type="range" min="0" max="15" value="2" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>Normal Quiz Offers (800 pts)</span>
+                <span id="valNormalOffers" style="color:var(--emerald-bright);">4 / day</span>
+              </div>
+              <input id="calcNormalOffers" type="range" min="0" max="20" value="4" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>PubScale / GoodWalls Surveys</span>
+                <span id="valSurveys" style="color:var(--cyan);">2 / day</span>
+              </div>
+              <input id="calcSurveys" type="range" min="0" max="10" value="2" />
+            </div>
+
+            <div class="slider-group" style="margin-bottom:0;">
+              <div class="slider-label">
+                <span>Successful Referrals (500 + 40%)</span>
+                <span id="valReferrals" style="color:var(--gold-bright);">5 / month</span>
+              </div>
+              <input id="calcReferrals" type="range" min="0" max="50" value="5" />
+            </div>
+          </div>
+
+          <div class="calc-result">
+            <h3 style="margin-bottom:12px;">Estimated Monthly Summary</h3>
+            <div class="calc-row">
+              <span style="color:var(--muted);">Daily Points</span>
+              <strong id="outDailyPts">7,100 pts</strong>
+            </div>
+            <div class="calc-row">
+              <span style="color:var(--muted);">Monthly Total Points</span>
+              <strong id="outMonthlyPts" style="color:var(--emerald-bright);">216,500 pts</strong>
+            </div>
+            <div class="calc-row">
+              <span style="color:var(--muted);">Your 70% Payout Value</span>
+              <strong id="outUserInr" style="color:var(--gold-bright); font-size:1.15rem;">₹2,165.00</strong>
+            </div>
+            <div class="calc-row">
+              <span style="color:var(--muted);">Platform 30% Operations</span>
+              <strong id="outAdminSplit">₹927.86</strong>
+            </div>
+            <p style="font-size:0.78rem; color:var(--muted); margin-top:12px;">
+              * Estimates are illustrative based on consistent daily completion within the 30 offers/day limit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="payouts" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="pill">Fast &amp; Trusted Settlements</span>
+          <h2>UPI, Paytm, IMPS Bank &amp; Google Play Redeem</h2>
+          <p>Withdraw rewards easily with real-time payout status tracking and anti-fraud verification to protect genuine users.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>UPI Instant &amp; Paytm</h3>
+            <p>Enter your verified UPI ID or Paytm wallet number for fast redemptions starting at ₹10 (1,000 pts).</p>
+          </div>
+          <div class="card">
+            <h3>IMPS &amp; Bank Transfer</h3>
+            <p>Direct IMPS Fast Bank and NEFT transfers with IFSC validation and UTR settlement tracking.</p>
+          </div>
+          <div class="card">
+            <h3>Google Play Redeem Code</h3>
+            <p>Get 16-digit Google Play gift codes delivered directly inside your wallet history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-trigger" type="button">How do Tickets work in Mega &amp; Normal Quiz Offers? <span>+</span></button>
+            <div class="faq-body">Play a quiz round and watch the built-in sponsored ad to collect 1 Ticket. Collect 30 Tickets on an offer to claim 1,500 pts (Mega) or 800 pts (Normal).</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" type="button">How does the 500 pts + 40% Referral Commission work? <span>+</span></button>
+            <div class="faq-body">When a friend signs in with Google and applies your invite code, you earn 500 base points plus a 40% commission bonus (+200 pts = 700 pts total per successful invite).</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" type="button">How does Anti-Fraud Security protect users? <span>+</span></button>
+            <div class="faq-body">RewardPulse uses Google Sign-In verification, device integrity checks, VPN detection, and dwell-time verification so fake accounts cannot abuse payouts.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 RewardPulse. Play Store Compliant Rewards Platform.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:nazimkhan44549763337@gmail.com">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
